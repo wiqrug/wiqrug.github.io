@@ -63,7 +63,7 @@ $(document).ready(function() {
         //check if player won
         let winningCondition = result.join('');
         if (winningCondition==="...."){
-            $("#resultDisplay").text("YOU WON!!");
+            $("#resultDisplay").html("YOU WON!!" +"<br><br>"+ 'click <a href=playGame.html id="playagain">here</a> to play again');
                 }
         else if (winningCondition ===""){
             $("#resultDisplay").append('<p class="leftPar">' +inputValue+"</p>" + '<p class="rightPar">' +"0 digits found"+ "</p>"+"<br>" );
