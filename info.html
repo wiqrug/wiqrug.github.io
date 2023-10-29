@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dot Dash Game</title>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="jquery-3.3.1.js"></script>
+    <script src="popper.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="infoStyles.css">
+  </head>
+  <body>
+    <div class="container-fluid p-0" id="top">
+      <div class="topSpace">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid" id="navRight">
+            <a class="navbar-brand" href="#" id="leftWelcome"
+              >The DotDash Game</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Homepage</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="info.html"
+                    >Info</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="playGame.html">PlayGame</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="midSpace">
+      <div class="midSpace2">
+        <div
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example2"
+          data-bs-root-margin="0px 0px -40%"
+          data-bs-smooth-scroll="true"
+          class="scrollspy-example p-3 rounded-2"
+          tabindex="0"
+        >
+        <div class="infos">
+          <h1>About the Game</h1>
+          <p>
+            A 4-digit number with unique digits is hidden, and your objective is to guess this number.</br>
+
+            <ul>When you make a guess:
+            
+               <li> If a digit from your guess is in the hidden number but not in its correct position, you receive a "-"</li>
+               <li> If a digit from your guess matches both the value and its position in the hidden number, you receive a "."</li>
+            </ul>
+            Note that you cannot type any duplicate numbers, any numbers with more or less than 4 digits, and any other character
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

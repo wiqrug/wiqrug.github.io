@@ -1,0 +1,44 @@
+body {
+    background-image: url(/images/alsothis.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* 100% of the viewport height */
+    object-fit: contain;
+    display: block;
+
+  }
+  .topSpace {
+    background-color: rgba(128, 128, 128, 0.649);
+  }
+
+  #leftWelcome {
+    flex: 40;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 250%;
+    font-family: cursive;
+  }
+
+  .midSpace {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.166);
+    height: 80%;
+    padding-top:5%;
+    padding-left:0%;
+  }
+  .midSpace .midSpace2 {
+    background-color: rgba(60, 60, 60, 0.966);
+    width: 50%; /* Adjust this value as per your requirement */
+    margin-left:25%;   
+  }
+  .midSpace .midSpace2 .infos{
+    color:beige;
+  }
+  .infos {
+border-radius: 15px; /* Adjust this value as per your requirement */
+padding: 20px; /* Add some padding for better appearance */
+padding-left:5%;
+
+  }
