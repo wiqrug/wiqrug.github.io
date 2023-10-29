@@ -25,7 +25,7 @@ function getRandomElement(arr) {
 
 
 
-
+$("#resultDisplay").html("<h1>Make a guess</h1>");
 
 //Interact with HTML to send feedback to the player about the results
 let hiddenNumber = getRandomElement(uniqueNumbers).toString(); 
@@ -33,6 +33,14 @@ $(document).ready(function() {
     console.log(hiddenNumber); 
 
     $("#button-addon2").click(function() {
+        if ($("#resultDisplay").text()==="Make a guess")
+        {
+            $("#resultDisplay").html("");
+        }
+
+
+
+
         const inputValue = $("input[aria-label='Your guess']").val();
         let result = [];
         if(uniqueNumbers.includes(parseInt(inputValue))){
@@ -58,15 +66,15 @@ $(document).ready(function() {
             $("#resultDisplay").text("YOU WON!!");
                 }
         else if (winningCondition ===""){
-            $("#resultDisplay").text("None of these digits exist in the hidden number");
+            $("#resultDisplay").append('<p class="leftPar">' +inputValue+"</p>" + '<p class="rightPar">' +"0 digits found"+ "</p>"+"<br>" );
         }
         else{
-            $("#resultDisplay").text(result.join(''));
+            $("#resultDisplay").append('<p class="leftPar">'+inputValue+'<p class="rightPar">'+result.join('')+ "</p>"+ "<br>");
 
         }
     }
     else {
-        $("#resultDisplay").text("Incorrect value!");
+        $("#resultDisplay").append('<p class="leftPar">'+inputValue +'<p class="rightPar">'+"Incorrect value!"+ "</p>" +"<br>");
     }
     });
 });
