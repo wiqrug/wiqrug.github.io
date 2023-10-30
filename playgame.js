@@ -57,19 +57,19 @@ $(document).ready(function() {
             //Avoid numbers that start with 0
             if(inputValue[0]==="0")
             {
-                $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Incorrect value!" + "</p>" + "<br>");
+                $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Invalid" + "</p>" + "<br>");
             }
             // Check if player won
             let winningCondition = result.join('');
             if (winningCondition === "...." && inputValue[0]!="0") {
                 $("#resultDisplay").html("YOU WON!!" + "<br><br>" + 'click <a href=playGame.html id="playagain">here</a> to play again');
             } else if (winningCondition === "" && inputValue[0]!="0") {
-                $("#resultDisplay").append( '<p>' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "0 digits found" + "</p>" + "<br>");
+                $("#resultDisplay").append( '<p>' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "0 digits" + "</p>" + "<br>");
             } else {
                 $("#resultDisplay").append('<p>' + inputValue  +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ result.join('') + "</p>" + "<br>");
             }
         } else {
-            $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Incorrect value!" + "</p>" + "<br>");
+            $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Invalid" + "</p>" + "<br>");
         }
     }
 
