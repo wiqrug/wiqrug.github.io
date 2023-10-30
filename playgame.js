@@ -59,12 +59,12 @@ $(document).ready(function() {
             if (winningCondition === "....") {
                 $("#resultDisplay").html("YOU WON!!" + "<br><br>" + 'click <a href=playGame.html id="playagain">here</a> to play again');
             } else if (winningCondition === "") {
-                $("#resultDisplay").append('<p class="leftPar">' + inputValue + "</p>" + '<p class="rightPar">' + "0 digits found" + "</p>" + "<br>");
+                $("#resultDisplay").append( '<p>' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "0 digits found" + "</p>" + "<br>");
             } else {
-                $("#resultDisplay").append('<p class="leftPar">' + inputValue + '<p class="rightPar">' + result.join('') + "</p>" + "<br>");
+                $("#resultDisplay").append('<p>' + inputValue  +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ result.join('') + "</p>" + "<br>");
             }
         } else {
-            $("#resultDisplay").append('<p class="leftPar">' + inputValue + '<p class="rightPar">' + "Incorrect value!" + "</p>" + "<br>");
+            $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Incorrect value!" + "</p>" + "<br>");
         }
     }
 
