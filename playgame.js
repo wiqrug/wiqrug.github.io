@@ -71,6 +71,10 @@ $(document).ready(function() {
         } else {
             $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Invalid" + "</p>" + "<br>");
         }
+        
+
+        var container = $("#resultDisplay");
+        container.scrollTop(container.prop("scrollHeight"));
     }
 
     $("#button-addon2").click(processGuess);
@@ -81,6 +85,8 @@ $(document).ready(function() {
             processGuess();
         }
     });
+
+
 });
 
 function shuffleArray(array) {
