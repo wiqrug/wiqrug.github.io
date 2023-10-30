@@ -54,11 +54,16 @@ $(document).ready(function() {
             // Shuffle the result
             result = shuffleArray(result);
 
+            //Avoid numbers that start with 0
+            if(inputValue[0]==="0")
+            {
+                $("#resultDisplay").append('<p >' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "Incorrect value!" + "</p>" + "<br>");
+            }
             // Check if player won
             let winningCondition = result.join('');
-            if (winningCondition === "....") {
+            if (winningCondition === "...." && inputValue[0]!="0") {
                 $("#resultDisplay").html("YOU WON!!" + "<br><br>" + 'click <a href=playGame.html id="playagain">here</a> to play again');
-            } else if (winningCondition === "") {
+            } else if (winningCondition === "" && inputValue[0]!="0") {
                 $("#resultDisplay").append( '<p>' + inputValue +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "0 digits found" + "</p>" + "<br>");
             } else {
                 $("#resultDisplay").append('<p>' + inputValue  +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ result.join('') + "</p>" + "<br>");
