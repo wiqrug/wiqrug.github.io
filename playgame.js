@@ -75,6 +75,7 @@ $(document).ready(function() {
 
         var container = $("#resultDisplay");
         container.scrollTop(container.prop("scrollHeight"));
+        $("input[aria-label='Your guess']").val('');
     }
 
     $("#button-addon2").click(processGuess);
