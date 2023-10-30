@@ -22,65 +22,61 @@ function getRandomElement(arr) {
     return arr[randomIndex];
 }
 
-
-
-
 $("#resultDisplay").html("<h1>Make a guess</h1>");
 
-//Interact with HTML to send feedback to the player about the results
+// Interact with HTML to send feedback to the player about the results
 let hiddenNumber = getRandomElement(uniqueNumbers).toString(); 
+
 $(document).ready(function() {
     console.log(hiddenNumber); 
 
-    $("#button-addon2").click(function() {
-        if ($("#resultDisplay").text()==="Make a guess")
-        {
+    function processGuess() {
+        if ($("#resultDisplay").text() === "Make a guess") {
             $("#resultDisplay").html("");
         }
-
-
-
 
         const inputValue = $("input[aria-label='Your guess']").val();
         let result = [];
         if(uniqueNumbers.includes(parseInt(inputValue))){
-        for (let i = 0; i < inputValue.length; i++) {
-            if (inputValue[i] === hiddenNumber[i]) {
-                result.push(".");
-            } else {
-                for (let j = 0; j < hiddenNumber.length; j++) {
-                    if (inputValue[i] === hiddenNumber[j] && i !== j) {
-                        result.push("-");
-                        break; 
+            for (let i = 0; i < inputValue.length; i++) {
+                if (inputValue[i] === hiddenNumber[i]) {
+                    result.push(".");
+                } else {
+                    for (let j = 0; j < hiddenNumber.length; j++) {
+                        if (inputValue[i] === hiddenNumber[j] && i !== j) {
+                            result.push("-");
+                            break; 
+                        }
                     }
                 }
             }
-        }
 
-        // Shuffle the result
-        result = shuffleArray(result);
+            // Shuffle the result
+            result = shuffleArray(result);
 
-        //check if player won
-        let winningCondition = result.join('');
-        if (winningCondition==="...."){
-            $("#resultDisplay").html("YOU WON!!" +"<br><br>"+ 'click <a href=playGame.html id="playagain">here</a> to play again');
-                }
-        else if (winningCondition ===""){
-            $("#resultDisplay").append('<p class="leftPar">' +inputValue+"</p>" + '<p class="rightPar">' +"0 digits found"+ "</p>"+"<br>" );
-        }
-        else{
-            $("#resultDisplay").append('<p class="leftPar">'+inputValue+'<p class="rightPar">'+result.join('')+ "</p>"+ "<br>");
-
+            // Check if player won
+            let winningCondition = result.join('');
+            if (winningCondition === "....") {
+                $("#resultDisplay").html("YOU WON!!" + "<br><br>" + 'click <a href=playGame.html id="playagain">here</a> to play again');
+            } else if (winningCondition === "") {
+                $("#resultDisplay").append('<p class="leftPar">' + inputValue + "</p>" + '<p class="rightPar">' + "0 digits found" + "</p>" + "<br>");
+            } else {
+                $("#resultDisplay").append('<p class="leftPar">' + inputValue + '<p class="rightPar">' + result.join('') + "</p>" + "<br>");
+            }
+        } else {
+            $("#resultDisplay").append('<p class="leftPar">' + inputValue + '<p class="rightPar">' + "Incorrect value!" + "</p>" + "<br>");
         }
     }
-    else {
-        $("#resultDisplay").append('<p class="leftPar">'+inputValue +'<p class="rightPar">'+"Incorrect value!"+ "</p>" +"<br>");
-    }
+
+    $("#button-addon2").click(processGuess);
+
+    $("#playerInput").keydown(function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            processGuess();
+        }
     });
 });
-
-
-
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
